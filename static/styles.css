@@ -6,11 +6,20 @@ body, h1, h2, h3, p, ul {
     padding: 0;
 }
 
+/* Set background image for the entire page */
+html {
+    height: 100%; /* Ensure html element takes full height */
+    background: url('/static/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Semi-transparent body background */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background: #f4f4f4;
-    color: #333;
+    background: rgba(255, 255, 255,); /* White background with 50% opacity */
+    color: hwb(0 98% 0%);
+    min-height: 100%; /* Ensure body element takes full height */
 }
 
 /* Container */
@@ -42,6 +51,30 @@ header li {
     padding: 0 1rem;
 }
 
+/* Hero section */
+.hero {
+    padding: 4rem 0;
+    text-align: center;
+    color: rgb(238, 228, 228);
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    display: inline-block;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.hero h2 {
+    margin: 0.5rem 0 0;
+    font-size: 1.5rem;
+}
+
 /* Main content */
 main {
     padding: 2rem 0;
@@ -50,27 +83,10 @@ main {
 /* Footer */
 footer {
     background: #333;
-    color: #fff;
+    color: #f1ebeb;
     text-align: center;
     padding: 1rem 0;
     position: fixed;
     width: 100%;
     bottom: 0;
-}
-
-/* Personal touch */
-h1 {
-    color: #0056b3;
-}
-
-h2 {
-    color: #666
-}
-
-p {
-    margin: 1rem 0;
-}
-
-ul li {
-    margin: 0.5rem 0;
 }
