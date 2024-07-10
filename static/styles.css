@@ -16,8 +16,8 @@ html {
 /* Semi-transparent body background */
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background: rgba(255, 255, 255,); /* White background with 50% opacity */
+    line-height: 1.5;
+    background: rgba(255, 255, 255,0.0);
     color: hwb(0 98% 0%);
     min-height: 100%; /* Ensure body element takes full height */
 }
@@ -53,7 +53,7 @@ header li {
 
 /* Hero section */
 .hero {
-    padding: 4rem 0;
+    padding: 2.5rem 0;
     text-align: center;
     color: rgb(238, 228, 228);
 }
@@ -82,7 +82,7 @@ main {
 
 /* Footer */
 footer {
-    background: #333;
+    background: #333333;
     color: #f1ebeb;
     text-align: center;
     padding: 1rem 0;
