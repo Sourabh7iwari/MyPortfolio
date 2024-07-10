@@ -22,6 +22,10 @@ def skills():
 def experiences():
     return render_template('experiences.html')
 
+@app.route('/timeline')
+def timeline():
+    return render_template('timeline.html')
+
 
 if __name__== '__main__':
     app.run(debug=True)

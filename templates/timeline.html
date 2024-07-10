@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Timeline{% endblock %}
+
+{% block content %}
+<h1>My Timeline</h1>
+
+<section class="timeline">
+    <div class="timeline-container">
+        <div class="timeline-item">
+            <div class="timeline-date">July 2024</div>
+            <div class="timeline-content">
+                <h3>AWS cluddder app</h3>
+                <p>Made a mini blogging app project with the purpose of learing AWS cloud engineering</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date"> May 2024</div>
+            <div class="timeline-content">
+                <h3>Stock price prediction with Sentiment Analysis</h3>
+                <p>Used Stacked LSTM model to predict the stock next day price, the prediction of price also get influenced by the sentiment scores of the news related to the input ticker of stock</p>
+            </div>
+        </div>
+        <!-- Add more timeline items as needed -->
+    </div>
+</section>
+{% endblock %}
