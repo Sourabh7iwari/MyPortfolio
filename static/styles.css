@@ -131,6 +131,26 @@ header li {
     right: 0;
 }
 
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: rgb(64, 81, 168);
+    font-size: 1.2em;
+}
+
+.social-links a:hover {
+    color: #0073e6; /* Change this color as needed */
+}
+
+.social-links i {
+    margin-right: 8px;
+}
+
+
 /* Main content */
 main {
     padding: 2rem 0;
