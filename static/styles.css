@@ -131,6 +131,19 @@ header li {
     right: 0;
 }
 
+/* Example for timeline item fade-in */
+.timeline-item {
+    opacity: .80;
+    transform: translateY(20px);
+    transition: all 0.5s ease-in-out;
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 .social-links {
     margin-top: 20px;
 }
@@ -167,3 +180,12 @@ footer {
     bottom: 0;
 }
 
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    .timeline-content {
+        width: 100%;
+    }
+}
