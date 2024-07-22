@@ -35,6 +35,7 @@ header {
     color: #fff;
     padding: 1rem 0;
     text-align: center;
+    position: relative;
 }
 
 header a {
@@ -49,6 +50,28 @@ header ul {
 header li {
     display: inline;
     padding: 0 1rem;
+}
+
+/* Positioning the social links in the upper right corner */
+header .social-links {
+    position: absolute;
+    top: .3rem;
+    right: 1rem;
+}
+
+.social-links a {
+    display: inline-block;
+    margin-left: 10px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.social-links a:hover {
+    color: #007BFF; /* Bootstrap primary color */
+}
+
+.social-links i {
+    margin-right: 5px;
 }
 
 /* Hero section */
@@ -143,9 +166,9 @@ header li {
     transform: translateY(0);
 }
 
-
 .social-links {
     margin-top: 20px;
+    text-align: center; /* Center align the social links in the about page */
 }
 
 .social-links a {
@@ -162,8 +185,6 @@ header li {
 .social-links i {
     margin-right: 5px;
 }
-
-
 
 /* Main content */
 main {
