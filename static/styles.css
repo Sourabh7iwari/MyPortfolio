@@ -149,19 +149,20 @@ header li {
 }
 
 .social-links a {
+    display: inline-block;
     margin-right: 15px;
     text-decoration: none;
-    color: rgb(64, 81, 168);
-    font-size: 1.2em;
+    color: #b4a6a6;
 }
 
 .social-links a:hover {
-    color: #0073e6; /* Change this color as needed */
+    color: #007BFF; /* Bootstrap primary color */
 }
 
 .social-links i {
-    margin-right: 8px;
+    margin-right: 5px;
 }
+
 
 
 /* Main content */
