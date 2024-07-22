@@ -17,7 +17,7 @@ html {
 body {
     font-family: Arial, sans-serif;
     line-height: 1.5;
-    background: rgba(255, 255, 255,0.0);
+    background: rgba(255, 255, 255, 0.0);
     color: hwb(0 98% 0%);
     min-height: 100%; /* Ensure body element takes full height */
 }
@@ -44,7 +44,7 @@ header a {
 }
 
 header ul {
-    list-style: none;
+    list-style: none; /* Center the navigation links */
 }
 
 header li {
@@ -53,24 +53,24 @@ header li {
 }
 
 /* Positioning the social links in the upper right corner */
-header .social-links {
+header .header-social-links {
     position: absolute;
-    top: .3rem;
+    top: 1.8rem;
     right: 1rem;
 }
 
-.social-links a {
+.header-social-links a {
     display: inline-block;
     margin-left: 10px;
     text-decoration: none;
     color: #fff;
 }
 
-.social-links a:hover {
+.header-social-links a:hover {
     color: #007BFF; /* Bootstrap primary color */
 }
 
-.social-links i {
+.header-social-links i {
     margin-right: 5px;
 }
 
@@ -166,23 +166,23 @@ header .social-links {
     transform: translateY(0);
 }
 
-.social-links {
+.about-social-links {
     margin-top: 20px;
     text-align: center; /* Center align the social links in the about page */
 }
 
-.social-links a {
+.about-social-links a {
     display: inline-block;
     margin-right: 15px;
     text-decoration: none;
     color: #b4a6a6;
 }
 
-.social-links a:hover {
+.about-social-links a:hover {
     color: #007BFF; /* Bootstrap primary color */
 }
 
-.social-links i {
+.about-social-links i {
     margin-right: 5px;
 }
 
@@ -209,5 +209,18 @@ footer {
 
     .timeline-content {
         width: 100%;
+    }
+
+    header nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-content {
+        padding: 1rem;
+    }
+
+    .header-social-links, .about-social-links {
+        margin-top: 10px;
     }
 }
