@@ -189,6 +189,7 @@ header .header-social-links {
 /* Main content */
 main {
     padding: 2rem 0;
+    padding-bottom: 4rem; /* Add padding to prevent content from being hidden by footer */
 }
 
 /* Footer */
@@ -216,11 +217,22 @@ footer {
         align-items: center;
     }
 
+    header .header-social-links {
+        position: static;
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+    }
+
     .hero-content {
         padding: 1rem;
     }
 
-    .header-social-links, .about-social-links {
+    .header-social-links a, .about-social-links a {
         margin-top: 10px;
+    }
+
+    .header-social-links i, .about-social-links i {
+        margin-right: 5px;
     }
 }
