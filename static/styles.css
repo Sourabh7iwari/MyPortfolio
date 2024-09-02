@@ -149,6 +149,12 @@ header .header-social-links {
     list-style: none;
 }
 
+.timeline-content {
+    background-image: initial;
+    background-color: rgb(24, 26, 27);
+    border-color: rgb(62, 68, 70);
+}
+
 .timeline-item {
     margin-bottom: 2rem;
 }
