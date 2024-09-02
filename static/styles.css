@@ -23,7 +23,7 @@ body {
     line-height: 1.5;
     background: rgba(255, 255, 255, 0.0);
     color: hwb(0 94% 5%);/* Ensure body element takes full height */
-    font-size: 120%;
+    font-size: 110%;
 }
 
 /* Container */
@@ -247,6 +247,9 @@ footer {
 @media (max-width: 768px) {
     .container {
         width: 90%;
+    }
+    body {
+        font-size: 80%;
     }
 
     .timeline-content {
