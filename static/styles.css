@@ -1,32 +1,22 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
-
-/* styles.css */
-
-/* Reset some default browser styles */
+/* General Styles */
 body, h1, h2, h3, p, ul {
+    text-align: center;
     margin: 0;
     padding: 0;
 }
 
-/* Set background image for the entire page */
 html {
     height: 100%; /* Ensure html element takes full height */
     background: url('/static/background.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 
-/* Semi-transparent body background */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.5;
     background: rgba(255, 255, 255, 0.0);
-    color: hwb(0 98% 0%);
-    min-height: 100%; /* Ensure body element takes full height */
+    color: hwb(0 94% 5%);/* Ensure body element takes full height */
+    font-size: 120%;
 }
 
 /* Container */
@@ -42,7 +32,20 @@ header {
     color: #fff;
     padding: 1rem 0;
     text-align: center;
-    position: relative;
+    position: fixed; /* Fixes the header at the top */
+    top: 0; /* Position it at the top */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure it stays above other content */
+    font-weight: bolder;
+}
+header ul {
+    list-style: none;
+    text-align: center;
+}
+
+header li {
+    display: inline-block;
+    padding: 0 1rem;
 }
 
 header a {
@@ -50,19 +53,9 @@ header a {
     text-decoration: none;
 }
 
-header ul {
-    list-style: none; /* Center the navigation links */
-}
-
-header li {
-    display: inline;
-    padding: 0 1rem;
-}
-
-/* Positioning the social links in the upper right corner */
 header .header-social-links {
     position: absolute;
-    top: 1.8rem;
+    top: 1rem;
     right: 1rem;
 }
 
@@ -81,13 +74,19 @@ header .header-social-links {
     margin-right: 5px;
 }
 
-/* Hero section */
+/* Hero Section */
 .hero {
+    position: fixed; /* Fixes the hero section */
+    top: 60px; /* Adjust this value to align below the fixed header */
+    left: 50%; /* Centers the hero horizontally */
+    transform: translateX(-50%); /* Corrects alignment after left: 50% */
+    width: 100%; /* Makes the hero full width */
+    height: 300px; /* Fixed height for the hero section */
     padding: 2.5rem 0;
     text-align: center;
     color: rgb(238, 228, 228);
+    z-index: 999; /* Ensure it's above other content but below the header */
 }
-
 .hero-content {
     background: rgba(0, 0, 0, 0.5);
     padding: 2rem;
@@ -103,6 +102,23 @@ header .header-social-links {
 .hero h2 {
     margin: 0.5rem 0 0;
     font-size: 1.5rem;
+}
+
+/* Section Content */
+.section-content {
+    min-height: 75vh; /* Adjust height to fit content needs */
+    padding: 60px 0; /* Internal spacing */
+    margin-top: 360px; /* Space to account for fixed hero */
+    /* Remove margin-top: -80px; */ /* Remove this to avoid content being pushed behind hero */
+    padding-top: 60px; /* Add padding to account for header height if needed */
+}
+
+/* Anchor offset helper */
+.offset-helper {
+    display: block;
+    height: 360px; /* Space to match the hero height */
+    margin-top: -360px; /* Negative margin to offset the scroll */
+    pointer-events: none; /* Ensures this doesn't interfere with clicks */
 }
 
 /* Timeline styles */
@@ -121,32 +137,20 @@ header .header-social-links {
 }
 
 .timeline-item {
-    padding: 1rem 0;
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding-left: 60px;
+    margin-bottom: 2rem;
 }
 
 .timeline-date {
     background: #333;
     color: white;
     padding: 0.5rem 1rem;
-    font-size: 1.2rem;
     border-radius: 25px;
-    position: relative;
-    left: 0;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .timeline-content {
-    background: #636161;
+    background: #fff;
     padding: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -213,13 +217,14 @@ main {
 
 /* Footer */
 footer {
-    background: #333333;
-    color: #f1ebeb;
+    background: #333;
+    color: #fff;
     text-align: center;
     padding: 1rem 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+    position: fixed; /* Fixes the footer at the bottom */
+    width: 100%; /* Full width */
+    bottom: 0; /* Position it at the bottom */
+    z-index: 1000; /* Ensure it stays above other content */
 }
 
 @media (max-width: 768px) {
@@ -239,7 +244,7 @@ footer {
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center;
-    }
+}
 
     header .header-social-links {
         position: static;
@@ -250,6 +255,13 @@ footer {
         -webkit-box-pack: center;
             -ms-flex-pack: center;
                 justify-content: center;
+    }
+    .hero {
+        height: 200px; /* Smaller height for smaller screens */
+    }
+
+    .section-content {
+        margin-top: 260px; /* Adjust margin-top for smaller hero height */
     }
 
     .hero-content {
