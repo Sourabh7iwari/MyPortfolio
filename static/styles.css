@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /* General Styles */
 body, h1, h2, h3, p, ul {
     text-align: center;
@@ -83,7 +90,9 @@ header .header-social-links {
     position: fixed; /* Fixes the hero section */
     top: 60px; /* Adjust this value to align below the fixed header */
     left: 50%; /* Centers the hero horizontally */
-    transform: translateX(-50%); /* Corrects alignment after left: 50% */
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%); /* Corrects alignment after left: 50% */
     width: 100%; /* Makes the hero full width */
     height: 300px; /* Fixed height for the hero section */
     padding: 2.5rem 0;
