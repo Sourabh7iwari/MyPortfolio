@@ -53,6 +53,10 @@ header a {
     text-decoration: none;
 }
 
+header a:hover {
+    color: #3d474b;
+}
+
 header .header-social-links {
     position: absolute;
     top: 1rem;
