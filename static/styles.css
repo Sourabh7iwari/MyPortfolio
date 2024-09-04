@@ -143,10 +143,10 @@ header .header-social-links {
 }
 
 .skills-category {
-    flex: 1 1 calc(15% - 10px); /* Smaller size and reduced margin */
+    flex: 1 1 calc(15% - 5px); /* Smaller size and reduced margin */
     box-sizing: border-box;
     padding: 15px; /* Reduced padding */
-    background: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+    background: rgba(75, 73, 73, 0.8); /* Slightly transparent background */
     border-radius: 8px;
     border: 1px solid #ddd;
     margin-bottom: 15px; /* Reduced margin */
@@ -154,7 +154,7 @@ header .header-social-links {
 }
 
 .skills-category:hover {
-    background: #f0f0f0; /* Light grey background on hover */
+    background: #2c2828; /* Light grey background on hover */
     border-color: #007BFF; /* Border color on hover */
 }
 
