@@ -100,6 +100,7 @@ header .header-social-links {
     color: rgb(238, 228, 228);
     z-index: 999; /* Ensure it's above other content but below the header */
 }
+
 .hero-content {
     background: rgba(0, 0, 0, 0.5);
     padding: 2rem;
@@ -116,6 +117,27 @@ header .header-social-links {
     margin: 0.5rem 0 0;
     font-size: 1.5rem;
 }
+/* Add this to your CSS file */
+/* Adjusted hero section for shrinking */
+.hero.shrink {
+    height: 150px; /* New height when shrunk */
+    transition: height 0.3s ease; /* Smooth transition effect */
+}
+
+/* Adjust content styles for the shrunken state */
+.hero-content.shrink-content {
+    padding: 1rem; /* Adjust padding when hero shrinks */
+    transition: padding 0.1s ease; /* Smooth transition effect */
+}
+
+.hero.shrink h1 {
+    font-size: 1.5rem; /* Smaller font size when hero shrinks */
+}
+
+.hero.shrink h2 {
+    font-size: 1rem; /* Smaller font size for subheading */
+}
+
 
 /* Section Content */
 .section-content {
@@ -146,7 +168,7 @@ header .header-social-links {
     flex: 1 1 calc(15% - 5px); /* Smaller size and reduced margin */
     box-sizing: border-box;
     padding: 15px; /* Reduced padding */
-    background: rgba(75, 73, 73, 0.8); /* Slightly transparent background */
+    background: rgba(36, 35, 35, 0.8); /* Slightly transparent background */
     border-radius: 8px;
     border: 1px solid #ddd;
     margin-bottom: 15px; /* Reduced margin */
@@ -154,7 +176,7 @@ header .header-social-links {
 }
 
 .skills-category:hover {
-    background: #2c2828; /* Light grey background on hover */
+    background: #363535; /* Light grey background on hover */
     border-color: #007BFF; /* Border color on hover */
 }
 

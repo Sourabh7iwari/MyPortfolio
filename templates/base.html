@@ -85,7 +85,7 @@
                         <li><i class="fab fa-kafka"></i> Kafka</li>
                         <li><i class="fab fa-spark"></i> Spark</li>
                         <li><i class="fab fa-flask"></i> Flask</li>
-                        <li><i class="fab fa-django"></i> Django</li>
+                        <li><i class="fas fa-django"></i> Django</li>
                     </ul>
                 </div>
                 
@@ -93,8 +93,8 @@
                     <h2>Developer Tools</h2>
                     <ul>
                         <li><i class="fab fa-docker"></i> Docker</li>
-                        <li><i class="fab fa-kubernetes"></i> Kubernetes</li>
-                        <li><i class="fab fa-vscode"></i> VS Code</li>
+                        <li><i class="fas fa-kubernetes"></i> Kubernetes</li>
+                        <li><i class="fas fa-vscode"></i> VS Code</li>
                         <li><i class="fab fa-gitpod"></i> Gitpod</li>
                         <li><i class="fab fa-git"></i> Git</li>
                         <li><i class="fab fa-github"></i> GitHub</li>
@@ -110,12 +110,14 @@
                                 <li>BigQuery</li>
                                 <li>GCS</li>
                                 <li>Dataflow</li>
+                                <li>Dataproc</li>
                             </ul>
                         </li>
                         <li><i class="fab fa-azure"></i> Azure
                             <ul>
                                 <li>Data Factory</li>
                                 <li>Synapse Analytics</li>
+                                <li>Azure Data lake</li>
                             </ul>
                         </li>
                     </ul>
@@ -125,6 +127,7 @@
                     <h2>Fundamental Skills</h2>
                     <ul>
                         <li><i class="fas fa-terminal"></i> Linux/Bash</li>
+                        <li><i class="fab fa-python"></i> Python Developer</li>
                         <li><i class="fas fa-chart-line"></i> Data Analysis</li>
                         <li><i class="fas fa-robot"></i> Machine Learning</li>
                         <li><i class="fas fa-cloud"></i> Cloud Computing</li>
@@ -147,7 +150,7 @@
                         <div class="timeline-content">
                             <h3>Data Engineering Certificate</h3>
                             <p>Recieved Azure Data Engineering Certificate from coursera</p>
-                                <p>Grade Achieved 89.08% </p>
+                            <p>Grade Achieved 89.08% </p>
                         </div>
                     </div>
                     <div class="timeline-item">
@@ -176,25 +179,65 @@
     </footer>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-          const heroHeight = 300; // Adjust this value to match the height of your fixed hero
-      
-          // Select all anchor links that start with '#'
-          document.querySelectorAll("a[href^='#']").forEach(anchor => {
-            anchor.addEventListener("click", function (e) {
-              e.preventDefault(); // Prevent the default anchor click behavior
-      
-              const target = document.querySelector(this.getAttribute("href")); // Get the target section
-              const offsetPosition = target.offsetTop - heroHeight; // Calculate offset
-      
-              // Smooth scroll to the calculated position
-              window.scrollTo({
-                top: offsetPosition,
-                behavior: "smooth"
-              });
+            const heroSection = document.querySelector('.hero');
+            const heroContent = document.querySelector('.hero-content');
+            const heroInitialHeight = 300; // Initial height of the hero section
+            const heroMinHeight = 150; // Minimum height of the hero section when fully shrunk
+            const heroScrollRange = heroInitialHeight - heroMinHeight;
+            const initialTopOffset = 60; // The original top offset for the hero section
+        
+            function adjustHeroSize() {
+                const scrollPos = window.scrollY;
+        
+                if (scrollPos < heroScrollRange) {
+                    // Calculate the new hero height based on scroll position
+                    const newHeight = heroInitialHeight - (scrollPos / heroScrollRange) * heroScrollRange;
+                    heroSection.style.height = `${newHeight}px`;
+                    
+                    // Adjust the top position to move the hero upward
+                    const newTopOffset = initialTopOffset - (scrollPos / heroScrollRange) * 30; // Adjust '30' to control how far up the hero moves
+                    heroSection.style.top = `${newTopOffset}px`;
+        
+                    // Adjust content style accordingly
+                    heroContent.style.padding = `${2.5 - (scrollPos / heroScrollRange) * 1.5}rem 0`;
+                    heroContent.style.transform = `translateY(${scrollPos / 4}px)`;
+                    heroSection.querySelector('h1').style.fontSize = `${2.5 - (scrollPos / heroScrollRange) * 1}rem`;
+                    heroSection.querySelector('h2').style.fontSize = `${1.5 - (scrollPos / heroScrollRange) * 0.5}rem`;
+                } else {
+                    // Keep the hero at its minimum size and top position once the scroll exceeds the range
+                    heroSection.style.height = `${heroMinHeight}px`;
+                    heroSection.style.top = `${initialTopOffset - 30}px`; // Final position when fully shrunk
+                    heroContent.style.padding = '1rem 0';
+                    heroContent.style.transform = `translateY(${heroScrollRange / 4}px)`;
+                    heroSection.querySelector('h1').style.fontSize = '1.5rem';
+                    heroSection.querySelector('h2').style.fontSize = '1rem';
+                }
+            }
+        
+            // Attach scroll event listener
+            window.addEventListener('scroll', adjustHeroSize);
+        
+            // Initial adjustment in case the user reloads while not at the top
+            adjustHeroSize();
+        
+            // Smooth scrolling for anchor links (preserving your existing script)
+            document.querySelectorAll("a[href^='#']").forEach(anchor => {
+                anchor.addEventListener("click", function (e) {
+                    e.preventDefault(); // Prevent the default anchor click behavior
+        
+                    const target = document.querySelector(this.getAttribute("href")); // Get the target section
+                    const offsetPosition = target.offsetTop - heroMinHeight; // Calculate offset
+        
+                    // Smooth scroll to the calculated position
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                });
             });
-          });
         });
-      </script>
-      
+        </script>
+        
+                
 </body>
 </html>
