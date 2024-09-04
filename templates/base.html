@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sourabh Tiwari - Portfolio</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
@@ -63,23 +63,93 @@
     <section id="skills" class="section-content">
         <span id="skills-anchor" class="offset-helper"></span>
         <div class="container">
-            <h1>My Skills</h1><br>
-            <ul>
-                <li>Python Development</li>
-                <li>Cloud Computing</li>
-                <li>Data Engineering</li>
-                <li>Web Development</li>
-                <li>Database Management</li>
-            </ul>
+            <h1>My Skills</h1>
+            <h3> Here’s a snapshot of my expertise:</h3>
+            
+            <div class="skills-grid">
+                <div class="skills-category">
+                    <h2>Languages</h2>
+                    <ul>
+                        <li><i class="fab fa-python"></i> Python</li>
+                        <li><i class="fab fa-java"></i> Java</li>
+                        <li><i class="fas fa-code"></i> HTML/CSS</li>
+                        <li><i class="fab fa-js"></i> JavaScript</li>
+                        <li><i class="fas fa-database"></i> SQL</li>
+                    </ul>
+                </div>
+                
+                <div class="skills-category">
+                    <h2>Frameworks and Tools</h2>
+                    <ul>
+                        <li><i class="fab fa-hadoop"></i> Hadoop</li>
+                        <li><i class="fab fa-kafka"></i> Kafka</li>
+                        <li><i class="fab fa-spark"></i> Spark</li>
+                        <li><i class="fab fa-flask"></i> Flask</li>
+                        <li><i class="fab fa-django"></i> Django</li>
+                    </ul>
+                </div>
+                
+                <div class="skills-category">
+                    <h2>Developer Tools</h2>
+                    <ul>
+                        <li><i class="fab fa-docker"></i> Docker</li>
+                        <li><i class="fab fa-kubernetes"></i> Kubernetes</li>
+                        <li><i class="fab fa-vscode"></i> VS Code</li>
+                        <li><i class="fab fa-gitpod"></i> Gitpod</li>
+                        <li><i class="fab fa-git"></i> Git</li>
+                        <li><i class="fab fa-github"></i> GitHub</li>
+                        <li><i class="fab fa-jira"></i> Jira</li>
+                    </ul>
+                </div>
+                
+                <div class="skills-category">
+                    <h2>Cloud Tools</h2>
+                    <ul>
+                        <li><i class="fab fa-google-cloud"></i> GCP
+                            <ul>
+                                <li>BigQuery</li>
+                                <li>GCS</li>
+                                <li>Dataflow</li>
+                            </ul>
+                        </li>
+                        <li><i class="fab fa-azure"></i> Azure
+                            <ul>
+                                <li>Data Factory</li>
+                                <li>Synapse Analytics</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="skills-category">
+                    <h2>Fundamental Skills</h2>
+                    <ul>
+                        <li><i class="fas fa-terminal"></i> Linux/Bash</li>
+                        <li><i class="fas fa-chart-line"></i> Data Analysis</li>
+                        <li><i class="fas fa-robot"></i> Machine Learning</li>
+                        <li><i class="fas fa-cloud"></i> Cloud Computing</li>
+                        <li><i class="fas fa-lock"></i> Data Engineering</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
+    
 
     <section id="timeline" class="section-content">
         <span id="timeline-anchor" class="offset-helper"></span>
         <div class="container">
-            <h1>My Timeline</h1><br>
+            <h1>My Timeline</h1>
             <div class="timeline">
                 <div class="timeline-container">
+                    <div class="timeline-item">
+                        <div class="timeline-date">3 Aug 2024</div>
+                        <div class="timeline-content">
+                            <h3>Data Engineering Certificate</h3>
+                            <p>Recieved Azure Data Engineering Certificate from coursera</p>
+                                <p>Grade Achieved 89.08% </p>
+                        </div>
+                    </div>
                     <div class="timeline-item">
                         <div class="timeline-date">July 2024</div>
                         <div class="timeline-content">

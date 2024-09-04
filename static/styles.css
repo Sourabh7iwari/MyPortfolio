@@ -134,6 +134,73 @@ header .header-social-links {
     pointer-events: none; /* Ensures this doesn't interfere with clicks */
 }
 
+/* Skills Section Styles */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Reduced gap */
+    justify-content: center;
+}
+
+.skills-category {
+    flex: 1 1 calc(15% - 10px); /* Smaller size and reduced margin */
+    box-sizing: border-box;
+    padding: 15px; /* Reduced padding */
+    background: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px; /* Reduced margin */
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.skills-category:hover {
+    background: #f0f0f0; /* Light grey background on hover */
+    border-color: #007BFF; /* Border color on hover */
+}
+
+.skills-category h2 {
+    font-size: 1.4rem; /* Slightly smaller font size */
+    color: #333;
+    margin-bottom: 0.8rem; /* Slightly reduced margin */
+}
+
+.skills-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skills-category ul li {
+    margin: 8px 0; /* Slightly reduced margin */
+    font-size: 1rem; /* Slightly reduced font size */
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.skills-category ul li i {
+    margin-right: 8px; /* Reduced icon margin */
+    color: #007BFF; /* Icon color */
+    font-size: 1.1rem; /* Slightly smaller icon size */
+}
+
+.skills-category ul ul {
+    margin-left: 15px; /* Reduced nested list margin */
+    font-size: 0.85rem; /* Slightly reduced font size */
+}
+
+.skills-category ul ul li {
+    margin: 4px 0; /* Reduced margin for nested items */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .skills-category {
+        flex: 1 1 calc(15% - 10px);
+    }
+}
+
+
 /* Timeline styles */
 .timeline {
     width: 80%;
