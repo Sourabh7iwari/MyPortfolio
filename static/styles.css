@@ -160,7 +160,7 @@ header .header-social-links {
 
 .skills-category h2 {
     font-size: 1.4rem; /* Slightly smaller font size */
-    color: #333;
+    color: #d8c6c6;
     margin-bottom: 0.8rem; /* Slightly reduced margin */
 }
 
@@ -173,7 +173,7 @@ header .header-social-links {
 .skills-category ul li {
     margin: 8px 0; /* Slightly reduced margin */
     font-size: 1rem; /* Slightly reduced font size */
-    color: #555;
+    color: #dad0d0;
     display: flex;
     align-items: center;
 }
