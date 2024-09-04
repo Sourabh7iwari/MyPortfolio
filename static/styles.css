@@ -1,9 +1,3 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
 
 /* General Styles */
 body, h1, h2, h3, p, ul {
@@ -121,13 +115,17 @@ header .header-social-links {
 /* Adjusted hero section for shrinking */
 .hero.shrink {
     height: 150px; /* New height when shrunk */
-    transition: height 0.3s ease; /* Smooth transition effect */
+    -webkit-transition: height 0.4s ease;
+    -o-transition: height 0.4s ease;
+    transition: height 0.4s ease; /* Smooth transition effect */
 }
 
 /* Adjust content styles for the shrunken state */
 .hero-content.shrink-content {
     padding: 1rem; /* Adjust padding when hero shrinks */
-    transition: padding 0.1s ease; /* Smooth transition effect */
+    -webkit-transition: padding 0.4s ease;
+    -o-transition: padding 0.4s ease;
+    transition: padding 0.4s ease; /* Smooth transition effect */
 }
 
 .hero.shrink h1 {
@@ -145,7 +143,7 @@ header .header-social-links {
     padding: 60px 0; /* Internal spacing */
     margin-top: 360px; /* Space to account for fixed hero */
     /* Remove margin-top: -80px; */ /* Remove this to avoid content being pushed behind hero */
-    padding-top: 60px; /* Add padding to account for header height if needed */
+    padding-top: 80px; /* Add padding to account for header height if needed */
 }
 
 /* Anchor offset helper */
@@ -158,20 +156,30 @@ header .header-social-links {
 
 /* Skills Section Styles */
 .skills-grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     gap: 15px; /* Reduced gap */
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .skills-category {
-    flex: 1 1 calc(15% - 5px); /* Smaller size and reduced margin */
-    box-sizing: border-box;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 calc(15% - 5px);
+            flex: 1 1 calc(15% - 5px); /* Smaller size and reduced margin */
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     padding: 15px; /* Reduced padding */
     background: rgba(36, 35, 35, 0.8); /* Slightly transparent background */
     border-radius: 8px;
     border: 1px solid #ddd;
     margin-bottom: 15px; /* Reduced margin */
+    -webkit-transition: background 0.3s ease, border-color 0.3s ease;
+    -o-transition: background 0.3s ease, border-color 0.3s ease;
     transition: background 0.3s ease, border-color 0.3s ease;
 }
 
@@ -196,8 +204,12 @@ header .header-social-links {
     margin: 8px 0; /* Slightly reduced margin */
     font-size: 1rem; /* Slightly reduced font size */
     color: #dad0d0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .skills-category ul li i {
@@ -218,7 +230,9 @@ header .header-social-links {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .skills-category {
-        flex: 1 1 calc(15% - 10px);
+        -webkit-box-flex: 1;
+            -ms-flex: 1 1 calc(15% - 10px);
+                flex: 1 1 calc(15% - 10px);
     }
 }
 
@@ -370,7 +384,10 @@ footer {
     }
 
     .section-content {
-        margin-top: 260px; /* Adjust margin-top for smaller hero height */
+        min-height: 120vh; /* Keeps the minimum height for the section */
+        padding: 60px 0; /* Keeps internal spacing */
+        margin-top: 290px; /* Adjust this to be smaller to fit smaller screens */
+        padding-top: 120px; /* Reduces top padding to fit content */
     }
 
     .hero-content {

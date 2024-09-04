@@ -220,23 +220,39 @@
             // Initial adjustment in case the user reloads while not at the top
             adjustHeroSize();
         
-            // Smooth scrolling for anchor links (preserving your existing script)
+            // Smooth scrolling for anchor links and reset hero size for specific sections
             document.querySelectorAll("a[href^='#']").forEach(anchor => {
                 anchor.addEventListener("click", function (e) {
                     e.preventDefault(); // Prevent the default anchor click behavior
         
                     const target = document.querySelector(this.getAttribute("href")); // Get the target section
-                    const offsetPosition = target.offsetTop - heroMinHeight; // Calculate offset
+                    
+                    if (this.getAttribute("href") === '#about') {
+                        // Scroll to the target and reset the hero size
+                        heroSection.style.height = `${heroInitialHeight}px`;
+                        heroSection.style.top = `${initialTopOffset}px`;
+                        heroContent.style.padding = '2.5rem 0';
+                        heroContent.style.transform = `translateY(0)`;
+                        heroSection.querySelector('h1').style.fontSize = '2.5rem';
+                        heroSection.querySelector('h2').style.fontSize = '1.5rem';
         
-                    // Smooth scroll to the calculated position
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: "smooth"
-                    });
+                        // Smooth scroll to the top of the page
+                        window.scrollTo({
+                            top: 0,
+                            behavior: "smooth"
+                        });
+                    } else {
+                        const offsetPosition = target.offsetTop - heroMinHeight; // Calculate offset
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                    }
                 });
             });
         });
         </script>
+        
         
                 
 </body>
