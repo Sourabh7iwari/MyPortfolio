@@ -52,13 +52,28 @@
     <section id="projects" class="section-content">
         <span id="projects-anchor" class="offset-helper"></span>
         <div class="container">
-            <h1>My Projects</h1><br>
-            <ul>
-                <li><strong>Stock price prediction:</strong> Made a Stock price prediction project with stacked LSTM model and sentiment analysis.</li>
-                <li><strong>Crudder app:</strong> Mini blogging site with AWS services</li>
-            </ul>
+            <h1 class="section-title">My Projects</h1>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <img src="static/stckprcprd.jpg" alt="Stock Price Prediction" class="project-image">
+                    <div class="project-info">
+                        <h3>Stock Price Prediction</h3>
+                        <p>Made a stock price prediction project using a stacked LSTM model and sentiment analysis to predict stock trends.</p>
+                        <a href="https://github.com/Sourabh7iwari/stock_price_prediction" target="_blank" class="project-link">View on GitHub</a>
+                    </div>
+                </div>
+    
+                <div class="project-item">
+                    <img src="static/rltmetlppln.png" alt="Stream Data Pipeline" class="project-image">
+                    <div class="project-info">
+                        <h3>Stream Data Pipeline</h3>
+                        <p>Real Time ETL pipeline to extract data from sensor's. Transform it and feed it to the postgres database.</p>
+                        <a href="https://github.com/Sourabh7iwari/RealtimeDatapipeline" target="_blank" class="project-link">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
+    </section>    
 
     <section id="skills" class="section-content">
         <span id="skills-anchor" class="offset-helper"></span>
@@ -173,9 +188,9 @@
     </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Sourabh Tiwari</p>
-        </div>
+            <div class="container">
+                <p>&copy; 2024 Sourabh Tiwari</p>
+            </div>
     </footer>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -185,10 +200,11 @@
             const heroMinHeight = 150; // Minimum height of the hero section when fully shrunk
             const heroScrollRange = heroInitialHeight - heroMinHeight;
             const initialTopOffset = 60; // The original top offset for the hero section
-        
+            const opacityRange = 1; // Maximum opacity
+    
             function adjustHeroSize() {
                 const scrollPos = window.scrollY;
-        
+    
                 if (scrollPos < heroScrollRange) {
                     // Calculate the new hero height based on scroll position
                     const newHeight = heroInitialHeight - (scrollPos / heroScrollRange) * heroScrollRange;
@@ -197,7 +213,11 @@
                     // Adjust the top position to move the hero upward
                     const newTopOffset = initialTopOffset - (scrollPos / heroScrollRange) * 30; // Adjust '30' to control how far up the hero moves
                     heroSection.style.top = `${newTopOffset}px`;
-        
+    
+                    // Calculate and apply the opacity based on scroll position
+                    const newOpacity = opacityRange * (1 - (scrollPos / heroScrollRange));
+                    heroSection.style.opacity = newOpacity;
+    
                     // Adjust content style accordingly
                     heroContent.style.padding = `${2.5 - (scrollPos / heroScrollRange) * 1.5}rem 0`;
                     heroContent.style.transform = `translateY(${scrollPos / 4}px)`;
@@ -207,35 +227,38 @@
                     // Keep the hero at its minimum size and top position once the scroll exceeds the range
                     heroSection.style.height = `${heroMinHeight}px`;
                     heroSection.style.top = `${initialTopOffset - 30}px`; // Final position when fully shrunk
+                    heroSection.style.opacity = 0; // Fully transparent when shrunk
+    
                     heroContent.style.padding = '1rem 0';
                     heroContent.style.transform = `translateY(${heroScrollRange / 4}px)`;
                     heroSection.querySelector('h1').style.fontSize = '1.5rem';
                     heroSection.querySelector('h2').style.fontSize = '1rem';
                 }
             }
-        
+    
             // Attach scroll event listener
             window.addEventListener('scroll', adjustHeroSize);
-        
+    
             // Initial adjustment in case the user reloads while not at the top
             adjustHeroSize();
-        
+    
             // Smooth scrolling for anchor links and reset hero size for specific sections
             document.querySelectorAll("a[href^='#']").forEach(anchor => {
                 anchor.addEventListener("click", function (e) {
                     e.preventDefault(); // Prevent the default anchor click behavior
-        
+    
                     const target = document.querySelector(this.getAttribute("href")); // Get the target section
                     
                     if (this.getAttribute("href") === '#about') {
                         // Scroll to the target and reset the hero size
                         heroSection.style.height = `${heroInitialHeight}px`;
                         heroSection.style.top = `${initialTopOffset}px`;
+                        heroSection.style.opacity = 1; // Reset opacity
                         heroContent.style.padding = '2.5rem 0';
                         heroContent.style.transform = `translateY(0)`;
                         heroSection.querySelector('h1').style.fontSize = '2.5rem';
                         heroSection.querySelector('h2').style.fontSize = '1.5rem';
-        
+    
                         // Smooth scroll to the top of the page
                         window.scrollTo({
                             top: 0,
@@ -251,9 +274,7 @@
                 });
             });
         });
-        </script>
-        
-        
+    </script>
                 
-</body>
-</html>
+    </body>
+    </html>
