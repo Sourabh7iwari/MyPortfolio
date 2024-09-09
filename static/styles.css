@@ -201,20 +201,20 @@ header .header-social-links {
 
 .project-info h3 {
     font-size: 1.8rem;
-    color: #444;
+    color: #ffffff;
     margin-bottom: 0.5rem;
 }
 
 .project-info p {
     font-size: 1rem;
-    color: #666;
+    color: #fffefe;
     margin-bottom: 1.5rem;
 }
 
 .project-link {
     display: inline-block;
     background-color: #007bff;
-    color: #1a1717;
+    color: #ffffff;
     padding: 0.7rem 1.5rem;
     border-radius: 5px;
     text-decoration: none;
