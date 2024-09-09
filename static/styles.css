@@ -143,7 +143,7 @@ header .header-social-links {
     padding: 60px 0; /* Internal spacing */
     margin-top: 360px; /* Space to account for fixed hero */
     /* Remove margin-top: -80px; */ /* Remove this to avoid content being pushed behind hero */
-    padding-top: 80px; /* Add padding to account for header height if needed */
+    padding-top: 40px; /* Add padding to account for header height if needed */
 }
 
 /* Anchor offset helper */
@@ -297,15 +297,6 @@ header .header-social-links {
 
 .skills-category ul ul li {
     margin: 4px 0; /* Reduced margin for nested items */
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .skills-category {
-        -webkit-box-flex: 1;
-            -ms-flex: 1 1 calc(15% - 10px);
-                flex: 1 1 calc(15% - 10px);
-    }
 }
 
 
@@ -473,4 +464,41 @@ footer {
     .header-social-links i, .about-social-links i {
         margin-right: 5px;
     }
+    
+    .skills-category {
+        -webkit-box-flex: 1;
+            -ms-flex: 1 1 calc(15% - 10px);
+                flex: 1 1 calc(15% - 10px);
+    }
+    .section-title {
+        font-size: 2rem; /* Adjusted font size for better readability on smaller screens */
+        margin-bottom: 1.5rem; /* Reduced margin-bottom to fit content */
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid with flexible column width */
+        gap: 1.5rem; /* Adjusted gap for better spacing */
+    }
+
+    .project-item {
+        padding: 1.25rem; /* Adjusted padding for better fit on smaller screens */
+    }
+
+    .project-image {
+        height: 300px; /* Adjusted height for uniformity across devices */
+    }
+
+    .project-info h3 {
+        font-size: 1.6rem; /* Reduced font size for better readability */
+    }
+
+    .project-info p {
+        font-size: 0.95rem; /* Adjusted font size for better fit */
+        margin-bottom: 1rem; /* Reduced margin-bottom for consistency */
+    }
+
+    .project-link {
+        padding: 0.6rem 1.2rem; /* Adjusted padding for better touch targets */
+    }
 }
+
