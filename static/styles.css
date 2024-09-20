@@ -513,6 +513,12 @@ footer {
         margin-bottom: 1.5rem; /* Reduced margin-bottom to fit content */
     }
 
+    .btn-neon {
+        padding: 7px 14px; /* Smaller padding */
+        font-size: 10px; /* Smaller font size */
+        border-radius: 30px; /* Slightly smaller border radius */
+    }
+
     .projects-grid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid with flexible column width */
         gap: 1.5rem; /* Adjusted gap for better spacing */
